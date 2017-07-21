@@ -66,9 +66,6 @@ public class LoginController extends BaseController {
         logger.info("GET请求登录");
 
 
-        String pwd = passwordHash.toHex("123456", StringUtils.getUUId());
-        System.out.println(pwd);
-
         if (SecurityUtils.getSubject().isAuthenticated()) {
             return "redirect:/index";
         }
@@ -89,10 +86,6 @@ public class LoginController extends BaseController {
             String username, String password, String captcha, 
             @RequestParam(value = "rememberMe", defaultValue = "0") Integer rememberMe) {
         logger.info("POST请求登录");
-
-
-        String pwd = passwordHash.toHex("123456", StringUtils.getUUId());
-        System.out.println(pwd);
 
 
         // 改为全部抛出异常，避免ajax csrf token被刷新
