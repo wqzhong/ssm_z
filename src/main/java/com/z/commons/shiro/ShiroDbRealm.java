@@ -25,11 +25,7 @@ import com.z.model.vo.UserVo;
 import com.z.service.IRoleService;
 import com.z.service.IUserService;
 
-/**
- * @description：shiro权限认证
- * @author：zhixuan.wang
- * @date：2015/10/1 14:51
- */
+
 public class ShiroDbRealm extends AuthorizingRealm {
     private static final Logger LOGGER = LogManager.getLogger(ShiroDbRealm.class);
 

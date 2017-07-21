@@ -7,7 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/generator")
 public class GeneratorController {
 
+	@RequestMapping("/toList")
+	public String toList(){
+		return "admin/generator/databasetables";
+	}
 	
 	
-	
+	@RequestMapping("/list")
+	public Object list(){
+		
+		
+		
+		
+	}
 }
