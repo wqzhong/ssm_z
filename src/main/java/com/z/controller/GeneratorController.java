@@ -16,7 +16,7 @@ public class GeneratorController {
 	@RequestMapping("/list")
 	public Object list(){
 		
-		
+		return null;
 		
 		
 	}
