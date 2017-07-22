@@ -22,6 +22,7 @@
         <ehcache.version>2.6.11</ehcache.version>
         <jackson.version>2.8.8</jackson.version>
         <commons-io.version>2.5</commons-io.version>
+        <commons.configuration.version>1.10</commons.configuration.version>
         <hibernate-validator.version>5.3.5.Final</hibernate-validator.version>
         <poi.version>3.16</poi.version>
     </properties>
@@ -111,6 +112,13 @@
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
         </dependency>
+        
+        <dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+			<version>${commons.configuration.version}</version>
+		</dependency>
+        
         <!-- Mybatis-Plus -->
         <dependency>
             <groupId>com.baomidou</groupId>

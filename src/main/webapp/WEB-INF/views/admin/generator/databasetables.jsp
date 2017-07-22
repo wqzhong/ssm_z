@@ -14,93 +14,55 @@
             rownumbers : true,
             pagination : true,
             singleSelect : true,
-            idField : 'id',
+            idField : 'tableName',
             sortName : 'createTime',
 	        sortOrder : 'asc',
             pageSize : 20,
             pageList : [ 10, 20, 30, 40, 50, 100, 200, 300, 400, 500 ],
             columns : [ [ {
                 width : '80',
-                title : '登录名',
-                field : 'loginName',
+                title : '表名',
+                field : 'tableName',
                 sortable : true
             }, {
                 width : '80',
-                title : '姓名',
-                field : 'name',
+                title : '数据库引擎',
+                field : 'engine',
                 sortable : true
-            },{
-                width : '80',
-                title : '部门ID',
-                field : 'organizationId',
-                hidden : true
-            },{
-                width : '80',
-                title : '所属部门',
-                field : 'organizationName'
             },{
                 width : '130',
                 title : '创建时间',
                 field : 'createTime',
                 sortable : true
-            },  {
-                width : '40',
-                title : '性别',
-                field : 'sex',
-                sortable : true,
-                formatter : function(value, row, index) {
-                    switch (value) {
-                    case 0:
-                        return '男';
-                    case 1:
-                        return '女';
-                    }
-                }
             }, {
-                width : '40',
-                title : '年龄',
-                field : 'age',
+                width : '130',
+                title : '表备注',
+                field : 'tableName',
                 sortable : true
-            },{
-                width : '120',
-                title : '电话',
-                field : 'phone',
-                sortable : true
-            }, 
-            {
-                width : '200',
-                title : '角色',
-                field : 'rolesList'
             }, {
-                width : '60',
-                title : '用户类型',
-                field : 'userType',
-                sortable : true,
+                field : 'action',
+                title : '操作',
+                width : 200,
                 formatter : function(value, row, index) {
-                    if(value == 0) {
-                        return "管理员";
-                    }else if(value == 1) {
-                        return "用户";
-                    }
-                    return "未知类型";
+                    var str = '';
+                        <shiro:hasPermission name="/role/grant">
+                            str += $.formatString('<a href="javascript:void(0)" class="role-easyui-linkbutton-ok" data-options="plain:true,iconCls:\'fi-check icon-green\'" onclick="grantRoleFun(\'{0}\');" >生成代码</a>', row.tableName);
+                        </shiro:hasPermission>
+                    return str;
                 }
-            },{
-                width : '60',
-                title : '状态',
-                field : 'status',
-                sortable : true,
-                formatter : function(value, row, index) {
-                    switch (value) {
-                    case 0:
-                        return '正常';
-                    case 1:
-                        return '停用';
-                    }
-                }
-            }] ]
-        });
+            } ] ],
+            onLoadSuccess:function(data){
+                $('.role-easyui-linkbutton-ok').linkbutton({text:'生成代码'});
+              
+            },
+        });      
+       
     });
     
+    
+    function grantRoleFun(id) {
+        alert(id);
+    }
  
  
 </script>
