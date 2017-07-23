@@ -60,8 +60,9 @@
     });
     
     
-    function grantRoleFun(id) {
-        alert(id);
+    function grantRoleFun(tableNames) {
+    	location.href = "${path }/generator/code?tables=" + tableNames;
+       
     }
  
  

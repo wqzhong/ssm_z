@@ -25,6 +25,7 @@
         <commons.configuration.version>1.10</commons.configuration.version>
         <hibernate-validator.version>5.3.5.Final</hibernate-validator.version>
         <poi.version>3.16</poi.version>
+        <fastjson.version>1.2.31</fastjson.version>
     </properties>
 
     <dependencies>
@@ -174,6 +175,12 @@
             <artifactId>ehcache-core</artifactId>
             <version>${ehcache.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+		</dependency>
         <!-- redis
         <dependency>
             <groupId>org.springframework.data</groupId>
